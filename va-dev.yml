@@ -18,7 +18,7 @@ steps:
       maxPermissibleCvssV3Score: 10.0                # optional (defaults to 0.0)
     knowledgeBaseId: ocid1.service.oc1.iad.amaaaaaab6fywtyalobukpan7s655fllbnh2ovdudmujhoil6zrytrkkcyaq # required (Supports parameter substitution)
     vulnerabilityAuditCompartmentId: ocid1.compartment.oc1..aaaaaaaa3lkgpzfz52snown4swkdawhnrbs46w5sxgswslrzopgh7oj3lcsq # optional (Supports parameter substitution) defaults to KB compartmentId
-    vulnerabilityAuditName: bhaveshReport.  # optional (Supports parameter substitution), name will be auto generated.
+    vulnerabilityAuditName: bhaveshReport  # optional (Supports parameter substitution), name will be auto generated.
   - type: Command
     name: "See maven repo before build"
     command: |
