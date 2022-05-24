@@ -17,7 +17,7 @@ steps:
       maxPermissibleCvssV2Score: 10.0                # optional (defaults to 0.0)
       maxPermissibleCvssV3Score: 10.0                # optional (defaults to 0.0)
     knowledgeBaseId: ${PIPELINE_PARAM_KB_OCID_REGIONAL} # required (Supports parameter substitution)
-    vulnerabilityAuditCompartmentId: ${BUILD_PIPELINE_PARAMETER_KEY_VA_COMPARTMENT_OCID}  # optional (Supports parameter substitution) defaults to KB compartmentId
+    vulnerabilityAuditCompartmentId: ocid1.compartment.oc1..aaaaaaaaizruowfq7ricy3h2tdjbujinoxq5bu7pfef36ccf5jogb6la2a5a  # optional (Supports parameter substitution) defaults to KB compartmentId
     vulnerabilityAuditName: integrationTestReport3  # optional (Supports parameter substitution), name will be auto generated.
   - type: Command
     name: "See maven repo before build"
