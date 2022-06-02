@@ -18,7 +18,7 @@ steps:
       maxPermissibleCvssV3Score: 10.0                # optional (defaults to 0.0)
     knowledgeBaseId: ${PIPELINE_PARAM_KB_OCID_REGIONAL} # required (Supports parameter substitution)
     vulnerabilityAuditCompartmentId: ${PARAM_ADM_COMPARTMENT_ID}  # optional (Supports parameter substitution) defaults to KB compartmentId
-    vulnerabilityAuditName: integrationTestReport  # optional (Supports parameter substitution), name will be auto generated.
+    vulnerabilityAuditName: ${PARAM_VULNERABILITY_AUDIT_NAME}  # optional (Supports parameter substitution), name will be auto generated.
   - type: Command
     name: "See maven repo before build"
     command: |
