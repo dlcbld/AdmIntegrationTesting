@@ -24,10 +24,9 @@ steps:
       rm -rf /root/lib/oracle-cli
       rm -rf /root/bin/oci
       yum -y autoremove python3
-      yum update
+      yum update -y
       yum -y install openssl-devel && yum -y install bzip2-devel && yum -y install libffi-devel
       yum -y groupinstall "Development Tools"
-      pip install --upgrade pip
   - type: Command
     name: "Install latest Python 3.10.7, set that to default and reinstall oci cli"
     command: |
@@ -39,6 +38,7 @@ steps:
       make altinstall
       which python3.10
       python3.10 -V
+      pip install --upgrade pip
       update-alternatives --list python
       update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10 1
       update-alternatives --install /usr/bin/python python3 /usr/local/bin/python3.10 2
