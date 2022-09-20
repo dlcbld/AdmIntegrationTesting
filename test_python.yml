@@ -30,6 +30,7 @@ steps:
       ./configure --enable-optimizations
       make altinstall
       python3.10 -V
+      sudo update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10
   - type: Command
     name: "Check Python and OCI CLI versions now"
     command: |
