@@ -37,7 +37,7 @@ steps:
       python3.10 -V
       update-alternatives --list python
       update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10 1
-      update-alternatives --install /usr/bin/python3 python /usr/local/bin/python3.10 2
+      update-alternatives --install /usr/bin/python python3 /usr/local/bin/python3.10 2
       bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh) -s --accept-all-defaults
   - type: Command
     name: "Check Python and OCI CLI versions now"
