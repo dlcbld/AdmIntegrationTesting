@@ -1,0 +1,27 @@
+version: 0.1
+component: build
+timeoutInSeconds: 20000
+runAs: root
+shell: bash
+env:
+  exportedVariables:
+   - version
+steps:
+  - type: Command
+    name: "Check python and OCI CLI version"
+    command: |
+      python --version
+      oci -v
+      echo "hello world"
+  - type: Command
+    name: "Check pyenv version"
+    command: |
+      pyenv -v
+  - type: Command
+    name: "viewing after build"
+    command: |
+      ls -lart /root/.m2/repository
+#   - type: Command
+#     name: "building the code second time"
+#     command: |
+#       mvn clean install
