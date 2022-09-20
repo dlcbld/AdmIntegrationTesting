@@ -36,7 +36,7 @@ steps:
       which python3.10
       python3.10 -V
       update-alternatives --list python
-      update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10
+      update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10 1
   - type: Command
     name: "Check Python and OCI CLI versions now"
     command: |
