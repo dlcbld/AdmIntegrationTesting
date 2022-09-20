@@ -25,8 +25,8 @@ steps:
       rm -rf /root/bin/oci
       yum -y autoremove python3
       yum update
-      yum -y install openssl-devel bzip2-devel libffi-devel
-      yum groupinstall "Development Tools"
+      yum -y install openssl-devel && yum -y install bzip2-devel && yum -y install libffi-devel
+      yum -y groupinstall "Development Tools"
       pip install --upgrade pip
   - type: Command
     name: "Install latest Python 3.10.7, set that to default and reinstall oci cli"
