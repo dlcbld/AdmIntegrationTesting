@@ -11,12 +11,14 @@ steps:
     name: "Check python and OCI CLI version"
     command: |
       python --version
+      python2 --version
+      python3 --version
       oci -v
       echo "hello world"
   - type: Command
     name: "Check pyenv version"
     command: |
-      pyenv -v
+      echo "after"
   - type: Command
     name: "viewing after build"
     command: |
