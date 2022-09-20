@@ -14,16 +14,26 @@ steps:
       python2 --version
       python3 --version
       oci -v
-      echo "hello world"
   - type: Command
-    name: "Check pyenv version"
+    name: "Update yum and its dependencies"
     command: |
-      echo "after"
+      yum update
+      yum install openssl-devel bzip2-devel libffi-devel
+      yum groupinstall "Development Tools"
   - type: Command
-    name: "viewing after build"
+    name: "Install latest Python 3.10.7"
     command: |
-      ls -lart /root/.m2/repository
-#   - type: Command
-#     name: "building the code second time"
-#     command: |
-#       mvn clean install
+      cd $HOME/agent
+      wget https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tgz
+      tar -xzf Python-3.10.7.tgz
+      cd Python-3.10.7
+      ./configure --enable-optimizations
+      make altinstall
+      python3.10 -V
+   - type: Command
+     name: "Check Python and OCI CLI versions now"
+     command: |
+       python --version
+       python2 --version
+       python3 -v
+       oci -v
