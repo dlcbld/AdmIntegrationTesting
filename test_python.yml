@@ -25,7 +25,7 @@ steps:
       yum install openssl-devel bzip2-devel libffi-devel
       yum groupinstall "Development Tools"
   - type: Command
-    name: "Install latest Python 3.10.7 and set that to default"
+    name: "Install latest Python 3.10.7, set that to default and reinstall oci cli"
     command: |
       cd $HOME/agent
       wget https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tgz
@@ -38,6 +38,7 @@ steps:
       update-alternatives --list python
       update-alternatives --install /usr/bin/python python /usr/local/bin/python3.10 1
       update-alternatives --install /usr/bin/python3 python /usr/local/bin/python3.10 2
+      bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh) -s --accept-all-defaults
   - type: Command
     name: "Check Python and OCI CLI versions now"
     command: |
