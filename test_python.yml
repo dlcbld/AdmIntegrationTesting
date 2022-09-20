@@ -19,18 +19,18 @@ steps:
       which oci
       oci -v
   - type: Command
-    name: "Update yum and its dependencies"
-    command: |
-      yum update
-      yum install openssl-devel bzip2-devel libffi-devel
-      yum groupinstall "Development Tools"
-  - type: Command
-    name: "Install latest Python 3.10.7, set that to default and reinstall oci cli"
+    name: "Cleaning and env setup"
     command: |
       rm -rf /root/lib/oracle-cli
       rm -rf /root/bin/oci
       yum -y autoremove python3
+      yum update
+      yum -y install openssl-devel bzip2-devel libffi-devel
+      yum groupinstall "Development Tools"
       pip install --upgrade pip
+  - type: Command
+    name: "Install latest Python 3.10.7, set that to default and reinstall oci cli"
+    command: |
       cd $HOME/agent
       wget https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tgz
       tar -xzf Python-3.10.7.tgz
