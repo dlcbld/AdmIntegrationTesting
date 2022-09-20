@@ -27,6 +27,10 @@ steps:
   - type: Command
     name: "Install latest Python 3.10.7, set that to default and reinstall oci cli"
     command: |
+      rm -rf /root/lib/oracle-cli
+      rm -rf /root/bin/oci
+      yum remove python3
+      pip install --upgrade pip
       cd $HOME/agent
       wget https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tgz
       tar -xzf Python-3.10.7.tgz
@@ -40,8 +44,6 @@ steps:
       update-alternatives --install /usr/bin/python python3 /usr/local/bin/python3.10 2
       alias python='/usr/local/bin/python3.10'
       alias python3='/usr/local/bin/python3.10'
-      rm -rf /root/lib/oracle-cli
-      rm -rf /root/bin/oci
       bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)" -s --accept-all-defaults
   - type: Command
     name: "Check Python and OCI CLI versions now"
