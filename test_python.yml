@@ -29,7 +29,7 @@ steps:
     command: |
       rm -rf /root/lib/oracle-cli
       rm -rf /root/bin/oci
-      yum remove python3
+      yum -y autoremove python3
       pip install --upgrade pip
       cd $HOME/agent
       wget https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tgz
