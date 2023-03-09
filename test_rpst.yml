@@ -1,0 +1,26 @@
+version: 0.1
+component: build
+timeoutInSeconds: 6000
+runAs: root
+shell: bash
+
+env:
+  variables:
+    "testEnv" : "testValue1"
+
+
+steps:
+  - type: Command
+    name: "Test oci cli with access"
+    timeoutInSeconds: 400
+    command: |
+      echo "Z====Z OCI_RESOURCE_PRINCIPAL_VERSION"
+      echo $OCI_RESOURCE_PRINCIPAL_VERSION
+      echo "Z=====Z OCI_RESOURCE_PRINCIPAL_RPST"
+      echo $OCI_RESOURCE_PRINCIPAL_RPST
+      echo "Z=====Z OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM"
+      cat $OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM
+      echo "Z=====Z OCI_RESOURCE_PRINCIPAL_REGION"
+      cat $OCI_RESOURCE_PRINCIPAL_REGION
+      echo "Z=====Z"
+      
